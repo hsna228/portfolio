@@ -94,12 +94,13 @@ export default {
 }
 @media only screen and (max-width: 767px) {
   .navbar-brand {
-    font-size: 2rem;
+    font-size: 2rem!important;
     width: 85%;
     text-align: right;
     top: 20px;
     position: fixed;
     z-index: -1;
+    z-index: 10;
   }
 }
 .navbar-toggler {
