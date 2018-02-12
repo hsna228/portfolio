@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start" : "node app.js"
+  },
+  "author": "Aya Hoshino",
+  "license": "ISC",
+  "dependencies": {
+    "archiver": "^0.21.0",
+    "async": "^1.5.2",
+    "body-parser": "*",
+    "cfenv": "1.0.x",
+    "date-utils": "*",
+    "express": "4.12.x",
+    "fs-extra": "0.30",
+    "request": "^2.83.0",
+    "shortid": "*",
+    "underscore": "*",
+    "watson-developer-cloud": "*"
+  },
+  "repository": {}
+}
