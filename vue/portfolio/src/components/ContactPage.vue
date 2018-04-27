@@ -1,22 +1,18 @@
 <template>
-  <div class="contact">
-    <b-row>
-      <b-container>
-        <div class="section__inner">
-          <p class="subtitle">Contact</p>
-          <div class="section__content">
-            Find me on
-            <a
-              :href="$store.state.facebookUrl"
-              target="_blank">Facebook</a>
-            or
-            <a
-              :href="$store.state.linkedinUrl"
-              target="_blank">LinkedIn</a>
-          </div><!--//.section__content-->
-        </div><!--//.section__inner-->
-      </b-container>
-    </b-row>
+  <div class="contact row">
+    <div class="section__inner width_100">
+      <p class="subtitle">Contact</p>
+      <div class="section__content width_100">
+        Feel free to contact me on
+        <a
+          :href="$store.state.facebookUrl"
+          target="facebook">Facebook</a>
+        or
+        <a
+          :href="$store.state.linkedinUrl"
+          target="lnikedin">LinkedIn</a>
+      </div><!--//.section__content-->
+    </div><!--//.section__inner-->
   </div><!--//.contact-->
 </template>
 
@@ -28,6 +24,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.contact {
+  text-align: center;
+  flex-grow: 1;
+  padding-top: 180px;
+}
 .contact .section__content {
   padding: 2rem;
   max-width: 30rem;
@@ -40,5 +41,8 @@ export default {
 a {
   color: rgba(0,0,0,0.4);
   text-decoration: underline;
+}
+a:hover {
+  color: var(--font-color);
 }
 </style>

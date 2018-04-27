@@ -1,31 +1,29 @@
 <template>
-  <div class="work">
-    <b-row>
-      <b-container>
-        <div class="section__inner">
-          <p class="subtitle">Works</p>
-          <div class="section__content">
-            <div
-             v-for="item in items"
-             :key="item.title">
-              <figure
-               class="thumbnail"
-               :style="'background: url(' + item.img + ') center center / contain no-repeat;'">
-                <figcaption>
-                  <div class="figcaption__content">
-                    <div class="figcaption__inner">
-                      <p class="date">{{ item.date }}</p>
-                      <p class="minititle">{{ item.title }}</p>
-                      <div v-html="item.explanation"></div>
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
+  <div class="work row">
+    <div class="section__inner width_100">
+      <p class="subtitle">Works</p>
+      <div class="thumbnail-area section__content width_100 row">
+        <div
+          class="thumbnail"
+          v-for="item in items"
+          :key="item.title">
+          <figure
+            class="thumbnail-img width_100"
+            :style="'background: url(' + item.img + ') center center / contain no-repeat;'">
+            <figcaption class="width_100"></figcaption>
+          </figure>
+          <div class="thumbnail-content">
+            <div class="thumbnail-content__inner">
+        <!--      <p class="date">{{ item.date }}</p>
+              <p class="title">{{ item.title }}</p>
+              <div
+                class="summary"
+                v-html="item.explanation"></div>  -->
             </div>
-          </div><!--.section__content-->
-        </div><!--//.section__inner-->
-      </b-container>
-    </b-row>
+          </div>
+        </div>
+      </div><!--.section__content-->
+    </div><!--//.section__inner-->
   </div><!--//.work-->
 </template>
 
@@ -37,6 +35,7 @@ export default {
   data() {
     return {
       items: works,
+      containerHeight: 0,
     };
   },
 };
@@ -44,91 +43,74 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.work {
+  text-align: center;
+  padding-top: 180px;
+}
 .section__content {
   margin-top: 5rem;
 }
-.date {
-  text-align: left;
-}
-.minititle {
-  font-size: 2rem;
+.thumbnail-area {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 .thumbnail {
-  height: 30rem;
-  width: 50rem;
-  margin: 0 auto;
+  width: 30%;
+  flex: 0 1 auto;
+  margin-bottom: 1rem;
 }
-figure {
-  position: relative;
+.thumbnail-img {
+  height: 15rem;
   overflow: hidden;
-  width: 300px;
+  cursor: pointer;
+  margin: 0;
 }
 figcaption {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
+  z-index: 1;
+  height: 15rem;
+  background: rgba(0,0,0,0.3);
   -webkit-transition: .3s;
   transition: .3s;
   opacity: 0;
-  color: rgba(255,255,255,0.5);
 }
 figure:hover figcaption {
   opacity: 1;
 }
-.figcaption__content {
-  padding: 5rem;
-  height: 100%;
-  width: 100%;
+.thumbnail-content__inner {
+  text-align: left;
 }
-.figcaption__inner {
-  height: 100%;
-  width: 100%;
-  padding: 5rem 5rem;
+.thumbnail-content .date {
+  font-size: .8rem;
 }
-@media screen and (min-width: 770px) and (max-width: 992px) {
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .thumbnail-img,
+  figcaption {
+    height: 10rem;
+  }
+}
+@media screen and (max-width: 768px) {
   .thumbnail {
-    width: 40rem;
-    height: 25rem;
+    width: 100%;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
   }
-  .figcaption__content {
-    padding: 3rem;
-  }
-  .figcaption__inner {
-    padding: 2rem;
-  }
-}
-@media screen and (max-width: 770px) {
-  .thumbnail {
-    width: 25rem;
-    height: 15rem;
-  }
-  .figcaption__content {
-    padding: 1.5rem;
-  }
-  .figcaption__inner {
-    padding: 1rem;
+  .thumbnail-img,
+  figcaption {
+    height: 20rem;
   }
 }
 @media only screen and (max-width: 430px) {
-  .thumbnail {
-    width: 15rem;
-    height: 10rem;
-  }
-  .minititle {
-    font-size: 1rem;
-  }
-  .date {
-    font-size: .5rem;
-  }
-  .figcaption__inner {
-    font-size: .5rem;
-  }
   .section__content {
     margin-top: 3rem;
+  }
+  .thumbnail-img,
+  figcaption {
+    height: 15rem;
   }
 }
 </style>

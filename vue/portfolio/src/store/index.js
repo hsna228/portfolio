@@ -9,9 +9,13 @@ const state = {
   dribbbleUrl: 'https://dribbble.com/shospnhay',
   linkedinUrl: 'https://www.linkedin.com/in/aya-hoshino-69b278151/',
   githubUrl: 'https://github.com/hsna228',
+  containerHeight: 0,
 };
 
 const modules = {
+  updateContainerHeight(height) {
+    state.containerHeight = height;
+  },
 };
 
 const store = new Vuex.Store({

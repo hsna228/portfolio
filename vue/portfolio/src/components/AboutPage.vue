@@ -1,32 +1,42 @@
 <template>
-  <div class="about">
-    <b-row>
-      <b-container>
-        <div class="section__inner">
-          <p class="subtitle">About</p>
-          <div class="section__content">
-            <div class="sentences" v-html="msg">
-            </div><!--//.sentences-->
-            <div>
-              <p class="minititle">How Can I Help</p>
-              <div class="thumbnail">
-                <div class="circle-thumbnail">
-                  <i class="fas fa-code"></i>
-                </div>
-                <div>
-                  <p class="thumbnail-title">Development</p>
-                  <ul class="thumbnail-content">
-                    <li>HTML/CSS/Javascript</li>
-                    <li>Javascript Framework <br> (jQuery, Angular, Vue.js)</li>
-                    <li>Node.js</li>
-                  </ul>
-                </div>
-              </div><!--//.thumbnail-->
-            </div>
-          </div><!--//.section__content-->
-        </div><!--//.section__inner-->
-      </b-container>
-    </b-row>
+  <div class="about row">
+    <div class="section__inner width_100">
+      <p class="subtitle">About</p>
+      <div class="section__content width_100">
+        <div class="sentences" v-html="msg">
+        </div><!--//.sentences-->
+        <div class="skills-area">
+          <p class="minititle">How Can I Help</p>
+          <div class="thumbnail-area row">
+            <div class="thumbnail">
+              <div class="thumbnail-circle">
+                <i class="fas fa-code"></i>
+                <p class="thumbnail-title">Development</p>
+              </div>
+              <div>
+                <ul class="thumbnail-content">
+                  <li>HTML/CSS/Javascript</li>
+                  <li>Javascript Framework <br> (jQuery, Angular, Vue.js)</li>
+                  <li>Node.js</li>
+                </ul>
+              </div>
+            </div><!--//.thumbnail-->
+
+            <div class="thumbnail">
+              <div class="thumbnail-circle">
+                <i class="fas fa-paint-brush"></i>
+                <p class="thumbnail-title">Design</p>
+              </div>
+              <div>
+                <ul class="thumbnail-content">
+                  <li>UI Design with considering usability</li>
+                </ul>
+              </div>
+            </div><!--//.thumbnail-->
+          </div><!--//.thumbnail-area-->
+        </div>
+      </div><!--//.section__content-->
+    </div><!--//.section__inner-->
   </div><!--//.about-->
 </template>
 
@@ -45,6 +55,7 @@ export default {
 <style scoped>
 .about {
   text-align: center;
+  padding-top: 180px;
 }
 .section__content {
   margin-top: 3rem;
@@ -56,24 +67,30 @@ export default {
   color: rgb(21, 170, 191);
   font-size: 1.5rem;
 }
+.thumbnail-area {
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
 .thumbnail {
-  width: 20rem;
+  width: 15rem;
+  height: 20rem;
+  flex: 0 1 auto;
   margin: 0 auto;
-  padding: 3rem;
+  padding: 2rem;
   border: .5px solid rgb(21, 170, 191);
+  margin-bottom: 1rem;
 }
-.circle-thumbnail {
-  height: 10rem;
-  width: 10rem;
+.thumbnail-circle {
   margin: 0 auto;
-  border: 1px solid rgb(21, 170, 191);
-  border-radius: 50%;
 }
-.fa-code {
+.thumbnail-circle svg {
   color: #15aabf;
-  height: 100%;
-  width: 100%;
   padding: 30px;
+  border-radius: 50%;
+  border: 1px solid;
+  height: 5rem;
+  width: 5rem;
 }
 .thumbnail-title {
   text-align: center;
@@ -83,6 +100,10 @@ export default {
 .thumbnail-content {
   width: 20rem;
   text-align: left;
+}
+
+.thumbnail-content li {
+  width: 12rem;
 }
 @media only screen and (max-width: 430px) {
   .thumbnail {

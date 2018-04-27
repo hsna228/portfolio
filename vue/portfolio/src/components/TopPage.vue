@@ -1,13 +1,11 @@
 <template>
-  <div class="top">
-    <b-row>
-      <b-container class="welcome-board">
-        <div
-         class="section__inner"
-         v-html="msg"></div>
-        <div class="preloader loader"><span></span></div>
-      </b-container>
-    </b-row>
+  <div class="top container">
+    <div class="welcome-board">
+      <div
+        class="section__inner"
+        v-html="msg"></div>
+      <div class="circle loader"><span></span></div>
+    </div>
   </div><!--//.top-->
 </template>
 
@@ -26,6 +24,9 @@ export default {
 <style scoped>
 .top {
   text-align: left;
+  flex-grow: 1;
+  padding-left: 3rem;
+  padding-top: 180px;
 }
 .welcome-borad {
   font-size: 2rem;
@@ -36,7 +37,7 @@ export default {
 }
 
 /*=== animation ===*/
-div.preloader {
+div.circle {
     position: fixed;
     z-index: -10;
     width: 100%;
