@@ -9,6 +9,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var cfenv = require('cfenv');
 var appEnv = cfenv.getAppEnv();
+var portNumber = appEnv.port;
 
 // create a new express server
 var app = express();
@@ -21,7 +22,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 // start server on the specified port and binding host
-app.listen(appEnv.port, appEnv.bind, function() {
+app.listen(portNumber, appEnv.bind, function() {
   // print a message when the server starts listening
   console.log("server starting on " + appEnv.url);
 });

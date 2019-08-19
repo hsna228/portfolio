@@ -5,8 +5,8 @@
       <div class="section__content width_100">
         Feel free to contact me on
         <a
-          :href="$store.state.facebookUrl"
-          target="facebook">Facebook</a>
+          :href="$store.state.slackUrl"
+          target="slack">Slack</a>
         or
         <a
           :href="$store.state.linkedinUrl"

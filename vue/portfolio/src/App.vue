@@ -12,16 +12,22 @@
             <li class="navbar-items">
                 <a
                   class="navbar-link"
+                  href="#/"
+                  :class="{ visited : nowPage == '/' }">Top</a>
+            </li>
+            <li class="navbar-items">
+                <a
+                  class="navbar-link"
                   href="#/about"
                   :class="{ visited : nowPage == '/about' }">About</a>
             </li>
-            <li class="navbar-items" style="margin-left:5rem;">
+            <li class="navbar-items">
                 <a
                   class="navbar-link"
                   href="#/works"
                   :class="{ visited : nowPage == '/works' }">Works</a>
             </li>
-            <li class="navbar-items" style="margin-left:5rem;">
+            <li class="navbar-items">
                 <a
                   class="navbar-link"
                   href="#/contact"
@@ -59,14 +65,6 @@
              class="linkedin"
              target="_blank">
              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </li>
-          <li>
-            <a
-             :href="$store.state.facebookUrl"
-             class="facebook"
-             target="_blank">
-             <i class="fab fa-facebook-f"></i>
             </a>
           </li>
         </div><!--//.footer-social-->
@@ -144,6 +142,7 @@ body {
 }
 .section__inner {
   padding: 3rem;
+  margin-top: 5rem;
   padding-left: auto;
 }
 
@@ -179,10 +178,14 @@ body {
   display: flex;
 }
 .navbar-items {
+  margin-left: 3rem;
   padding-top: 2rem;
   display: block;
   text-decoration: none;
   font-size: 1rem;
+}
+.navbar-items:first-of-type {
+  margin-left: 2rem;
 }
 .navbar-link {
   text-decoration: none;
@@ -294,20 +297,21 @@ body {
   .navbar-area {
     flex-direction: column;
   }
-  .app-logo {
+  .navbar-area .app-logo {
     width: 30rem;
+    margin-right: unset;
   }
 }
 @media only screen and (min-width: 480px) and (max-width: 768px) {
   .navbar-area {
     margin: 0 auto;
   }
-  .app-logo {
+  .navbar-area .app-logo {
     text-align: center;
   }
 }
 @media only screen and (max-width: 480px) {
-  .app-logo {
+  .navbar-area .app-logo {
     width: 25rem;
   }
   .navbar-area nav {

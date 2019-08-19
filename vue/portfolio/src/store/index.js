@@ -5,7 +5,7 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 const state = {
-  facebookUrl: 'https://www.facebook.com/jas.lol2',
+  slackUrl: 'https://join.slack.com/t/ayahoshino/shared_invite/enQtNzMyMjc4NzYxMjU1LTg0NDhhYWIzMmVmZjRlMDA0MmQ5NzNiY2ZlOGU3NjBlNzMxY2Q0MjVlOThjZjU2NGUwZTZhN2U2NzM2ZDc4YmM',
   dribbbleUrl: 'https://dribbble.com/shospnhay',
   linkedinUrl: 'https://www.linkedin.com/in/aya-hoshino-69b278151/',
   githubUrl: 'https://github.com/hsna228',

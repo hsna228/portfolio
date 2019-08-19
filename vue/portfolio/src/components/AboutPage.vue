@@ -45,7 +45,7 @@ export default {
   name: 'AboutPage',
   data() {
     return {
-      msg: 'I\'m a front-end developer, based in Japan. <br>Currently working as a front-end developer at IBM Japan Systems Engineering Co.,Ltd. <br>My Works in this site are what I designed or developed on my own, not used in any projects.',
+      msg: 'I\'m a front-end developer, based in Japan. <br>Formerly worked at IBM Japan Systems Engineering Co.,Ltd. <br>My Works in this site are what I designed or developed on my own, but not exactly used in any projects.',
     };
   },
 };
